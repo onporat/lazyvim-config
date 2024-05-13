@@ -7,4 +7,5 @@ vim.keymap.set(
   "<cmd>BufferLineCloseLeft<cr><cmd>BufferLineCloseRight<cr>",
   { desc = "Close other buffers" }
 )
-vim.keymap.set("n", "<leader>h", "<cmd>nohlsearch<cr>", { desc = "Turn off search highlighting" })
+-- vim.keymap.set("n", "<leader>h", "<cmd>nohlsearch<cr>", { desc = "Turn off search highlighting" })
+vim.keymap.set("n", "S", "S", { desc = "Restore S original functionally" })
