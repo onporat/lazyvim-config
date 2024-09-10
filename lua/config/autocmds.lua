@@ -20,3 +20,21 @@ table.insert(configs, {
   console = "integratedTerminal",
   justMyCode = false,
 })
+
+-- Autoformat setting
+local set_autoformat = function(pattern, bool_val)
+  vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = pattern,
+    callback = function()
+      vim.b.autoformat = bool_val
+    end,
+  })
+end
+
+-- set_autoformat({ "cpp" }, true)
+set_autoformat({ "yaml" }, false)
+
+-- set darker backgound color
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "#16181a" })
+--
+vim.cmd([[autocmd BufNewFile,BufRead *Jenkinsfile* setfiletype groovy]])

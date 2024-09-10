@@ -4,3 +4,12 @@
 vim.opt.clipboard = ""
 vim.opt.mouse = ""
 vim.g.loaded_matchparen = 1
+
+vim.opt.iskeyword:append("-")
+-- autocmd FileType javascript lua vim.opt.iskeyword:append("-")
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "yaml.ansible",
+  callback = function()
+    vim.opt_local.iskeyword:append(".")
+  end,
+})
